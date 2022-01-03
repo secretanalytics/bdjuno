@@ -15,7 +15,7 @@ import (
 
 func (suite *DbTestSuite) TestBigDipperDb_SaveCommunityPool() {
 	// Save data
-	original := sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(100)))
+	original := sdk.NewDecCoins(sdk.NewDecCoin("uscrt", sdk.NewInt(100)))
 	err := suite.database.SaveCommunityPool(original, 10)
 	suite.Require().NoError(err)
 
@@ -30,7 +30,7 @@ func (suite *DbTestSuite) TestBigDipperDb_SaveCommunityPool() {
 	// ---------------------------------------------------------------------------------------------------------------
 
 	// Try updating with lower height
-	coins := sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(50)))
+	coins := sdk.NewDecCoins(sdk.NewDecCoin("uscrt", sdk.NewInt(50)))
 	err = suite.database.SaveCommunityPool(coins, 5)
 	suite.Require().NoError(err)
 
@@ -45,7 +45,7 @@ func (suite *DbTestSuite) TestBigDipperDb_SaveCommunityPool() {
 	// ---------------------------------------------------------------------------------------------------------------
 
 	// Try updating with equal height
-	coins = sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(120)))
+	coins = sdk.NewDecCoins(sdk.NewDecCoin("uscrt", sdk.NewInt(120)))
 	err = suite.database.SaveCommunityPool(coins, 10)
 	suite.Require().NoError(err)
 
@@ -60,7 +60,7 @@ func (suite *DbTestSuite) TestBigDipperDb_SaveCommunityPool() {
 	// ---------------------------------------------------------------------------------------------------------------
 
 	// Try updating with higher height
-	coins = sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(200)))
+	coins = sdk.NewDecCoins(sdk.NewDecCoin("uscrt", sdk.NewInt(200)))
 	err = suite.database.SaveCommunityPool(coins, 11)
 	suite.Require().NoError(err)
 
